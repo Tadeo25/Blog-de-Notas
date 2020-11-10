@@ -2,6 +2,7 @@ const formNotes = document.getElementById('formNotes')
 const tittleInput = document.getElementById('tittle')
 const textAreaInput = document.getElementById('textArea')
 const categoryInput = document.getElementById('category')
+const notesTableInput = document.getElementById('notesTable')
 const tittleModalInput = document.getElementById('tittleModal')
 const textAreaModalInput = document.getElementById('textAreaModal')
 const formEditNotes = document.getElementById('formEditNotes')
@@ -80,7 +81,7 @@ function displayNotes() {
     const note = notes[i];
     const createdAt = new Date(note.createdAt);
     const div = `
-    <div class="ml-5 card-note" style="width: 200px;">
+    <div class="ml-5 card-note m-3" style="width: 200px;">
 
     <div class="h-100 card text-white bg-dark mb-3" style="max-width: 18rem;">
         <div class="card-header">${note.category}</div>
@@ -100,13 +101,10 @@ function displayNotes() {
     </div>
 </div>
 ${getModal(note)}
-
-
-
         `
     rows.push(div)
   }
-  displayNotes.innerHTML = rows.join('')
+  notesTable.innerHTML = rows.join('')
 }
 displayNotes();
 
