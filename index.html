@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--Css-->
+    <link rel="stylesheet" href="style.css">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Notes</title>
+</head>
+<div class="jumbotron bg-dark text-center">
+    <h1>
+        Swell  <i class="fas fa-water fas-color"></i>
+    </h1>
+    <h2>
+        Tu blog de notas personalizadas
+    </h2>
+</div>
+
+<body>
+
+    <div class="d-flex justify-content-between bg-dark m-5 p-2 bg-secondary color">
+        <h4>
+            MIS NOTAS
+        </h4>
+        <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#staticBackdrop">
+            <b>Crear Nota</b>
+        </button>
+    </div>
+
+    <!-- <div class="p-4 d-flex justify-content-end">
+        <form id="searchNote">
+            <input type="search" id="search" placeholder="Ingrese su busqueda" style="width: 300px;">
+            <button type="submit" class="btn btn-outline-success">
+                <i class="fab fa-searchengin"></i>
+            </button>
+        </form>
+    </div>
+
+    <div id="notesTable" class="d-flex flex-wrap">
+    </div> -->
+
+
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-dark">
+                    <h5 class="modal-title" id="staticBackdropLabel">Empieza a crear tu nota</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                        style="color: aliceblue;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body bg-dark">
+                    <div class="container">
+                        <form id="formNotes" class="m-5">
+
+                            <div class="form-group">
+                                <label for="tittle">
+                                    <b>Titulo</b>
+                                </label>
+                                <input type="text" class="form-control" id="tittle" maxlength="15" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="textArea"></label>
+                                <textarea class="form-control" id="textArea" rows="3" maxlength="500"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="category"></label>
+                                <select class="form-control" id="category" required>
+                                    <option value="" disabled selected>Categoria</option>
+                                    <option>Tramites</option>
+                                    <option>Compras</option>
+                                    <option>Trabajo</option>
+                                    <option>Tareas</option>
+                                    <option>Objetivos</option>
+                                </select>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-outline-primary"><b>Guardar</b></button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Modal Edit -->
+
+        <div class="modal fade" id="staticBackdrop1" data-backdrop="static" data-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark">
+                        <h5 class="modal-title" id="staticBackdropLabel">Edita tu nota</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            style="color: aliceblue;">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body bg-dark">
+                        <div class="container">
+                            <form id="formEditNotes" class="m-5">
+
+                                <div class="form-group">
+                                    <label for="tittle">
+                                        <b>Titulo</b>
+                                    </label>
+                                    <input type="text" class="form-control" id="tittleModal" maxlength="60" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="textArea"></label>
+                                    <textarea class="form-control" id="textAreaModal" rows="3"
+                                        maxlength="500"></textarea>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-outline-primary"><b>Actualizar</b></button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <script src="./script.js"></script>
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
